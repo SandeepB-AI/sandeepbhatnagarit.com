@@ -1,9 +1,166 @@
 import "./App.css";
 
+const factoryStages = [
+  {
+    number: "01",
+    title: "Discover",
+    subtitle: "Understand the business",
+    description:
+      "Work directly with business leaders to understand the workflow, friction, decisions, data, and outcomes that matter.",
+  },
+  {
+    number: "02",
+    title: "Frame",
+    subtitle: "Translate pain into opportunity",
+    description:
+      "Turn business problems into practical AI opportunities, defining the user, workflow, value proposition, and desired outcome.",
+  },
+  {
+    number: "03",
+    title: "Prioritize",
+    subtitle: "Choose where AI should act",
+    description:
+      "Evaluate value, feasibility, risk, dependencies, capacity, and readiness before investing in a solution.",
+  },
+  {
+    number: "04",
+    title: "Design & Build",
+    subtitle: "Create the AI product",
+    description:
+      "Shape the product and architecture, prototype workflows, and mobilize FDE and engineering teams to build working capabilities.",
+  },
+  {
+    number: "05",
+    title: "Govern, Deploy & Adopt",
+    subtitle: "Make it enterprise-ready",
+    description:
+      "Integrate governance, security, evaluation, human oversight, deployment, enablement, and organizational change.",
+  },
+  {
+    number: "06",
+    title: "Measure & Scale",
+    subtitle: "Turn capability into value",
+    description:
+      "Track adoption, performance, business outcomes, and value realization—and scale what works.",
+  },
+];
+
+const agentRoles = [
+  ["01", "Portfolio Roadmap Agent", "Continuously interprets strategy, portfolio signals, milestones, and investment priorities."],
+  ["02", "Demand Intake Agent", "Captures and structures incoming demand so opportunities become decision-ready."],
+  ["03", "Prioritization Agent", "Evaluates value, feasibility, risk, dependencies, and capacity."],
+  ["04", "Resource Capacity Agent", "Surfaces capacity constraints, skill gaps, competing demand, and allocation options."],
+  ["05", "Financial & Benefits Agent", "Connects investment, expected benefits, actual outcomes, and value realization."],
+  ["06", "Synthetic PM Agent", "Supports planning, actions, milestones, coordination, status, and execution workflows."],
+  ["07", "Risk & Issue Agent", "Continuously identifies signals, patterns, dependencies, risks, issues, and escalation needs."],
+  ["08", "Executive Reporting Agent", "Turns portfolio data into concise, decision-ready executive intelligence."],
+];
+
+const systems = [
+  {
+    label: "ENTERPRISE AI",
+    title: "Enterprise AI Assistant",
+    description:
+      "AI-enabled enterprise assistance designed around real business workflows, knowledge, and delivery needs.",
+    tags: ["AI Assistant", "Enterprise AI", "Agents"],
+    outcome: "3× throughput • 1,500+ hours reclaimed • 30% faster delivery",
+    status: "ENTERPRISE EXPERIENCE",
+    featured: true,
+  },
+  {
+    label: "RAG / KNOWLEDGE AI",
+    title: "Enterprise RAG / Knowledge System",
+    description:
+      "Hands-on Claude-based RAG system using Voyage AI embeddings, vector search, BM25 hybrid retrieval, summary indexing, reranking, and measured evaluation.",
+    tags: ["Claude", "RAG", "Retrieval", "Evaluation"],
+    status: "HANDS-ON BUILD",
+  },
+  {
+    label: "VOICE / AGENTIC AI",
+    title: "Voice AI Receptionist",
+    description:
+      "Deployed voice agent that handles natural phone conversations, reasons with Claude, maintains session context, and performs real calendar actions through tool use.",
+    tags: ["Twilio", "Claude", "Tool Use", "Google Calendar"],
+    status: "DEPLOYED HANDS-ON BUILD",
+  },
+  {
+    label: "AI PRODUCT",
+    title: "AI-Enabled PPM",
+    description:
+      "A reference operating model applying Agentic AI to portfolio, program, project, governance, and value-management workflows.",
+    tags: ["PPM", "Agentic AI", "Operating Model"],
+    status: "REFERENCE OPERATING MODEL",
+  },
+];
+
+const experience = [
+  {
+    years: "2025 — PRESENT",
+    company: "INFOR",
+    role: "Enterprise AI Factory / Product Ownership",
+    description:
+      "AI product strategy, vision, roadmap, backlog, Agentic AI, Copilot, Claude, enterprise AI delivery, governance, and adoption.",
+  },
+  {
+    years: "2021 — 2025",
+    company: "INFOR",
+    role: "Agile Portfolio & Governance Transformation",
+    description:
+      "Enterprise intake, prioritization, investment evaluation, portfolio governance, Agile transformation, executive insights, and value realization.",
+  },
+  {
+    years: "2021",
+    company: "DISNEY",
+    role: "Strategic Agile Advisor / PMO Transformation",
+    description:
+      "Global delivery modernization, process improvement, portfolio intake, prioritization, governance, and Agile transformation.",
+  },
+  {
+    years: "2014 — 2021",
+    company: "ALVAREZ & MARSAL",
+    role: "Governance & PMO Director",
+    description:
+      "Built enterprise governance and delivery capabilities, integrated technology programs, executive reporting, risk management, and operationalization.",
+  },
+  {
+    years: "2007 — 2014",
+    company: "TRAVELERS",
+    role: "Enterprise Technology / Program Delivery",
+    description:
+      "Enterprise technology and data initiatives across Technology, Operations, Compliance, and Finance.",
+  },
+];
+
+const insights = [
+  {
+    number: "01",
+    title: "The AI Agent Factory",
+    description:
+      "Why enterprises need an operating model—not another collection of disconnected AI pilots—to move from ideas to production.",
+  },
+  {
+    number: "02",
+    title: "Humans + Agents",
+    description:
+      "The future of enterprise execution is not people versus AI. It is experienced leaders augmented by an intelligent digital workforce.",
+  },
+  {
+    number: "03",
+    title: "From AI Pilots to Production",
+    description:
+      "The hard part of enterprise AI begins after the prototype: governance, integration, adoption, evaluation, and measurable value.",
+  },
+  {
+    number: "04",
+    title: "AI Transformation Is an Operating Model",
+    description:
+      "Technology matters, but sustainable AI transformation requires changes to decisions, workflows, roles, governance, and accountability.",
+  },
+];
+
 function App() {
   return (
     <div className="site-shell">
-      {/* Header */}
       <header className="site-header">
         <div className="container nav-container">
           <a href="#top" className="brand">
@@ -11,13 +168,12 @@ function App() {
           </a>
 
           <nav className="nav">
-            <a href="#about">About</a>
             <a href="#ai-transformation">AI Transformation</a>
+            <a href="#agent-factory">Agent Factory</a>
             <a href="#ai-ppm">AI-Enabled PPM</a>
-            <a href="#systems">AI Systems</a>
-            <a href="#execution-system">Execution System</a>
+            <a href="#systems">What I Build</a>
             <a href="#experience">Experience</a>
-            <a href="#thought-leadership">Insights</a>
+            <a href="#insights">Insights</a>
             <a href="#contact" className="nav-cta">
               Let's Connect
             </a>
@@ -26,715 +182,391 @@ function App() {
       </header>
 
       <main id="top">
-        {/* Hero */}
+
+        {/* HERO */}
         <section className="hero">
           <div className="container hero-grid">
             <div className="hero-content">
-              <div className="eyebrow">AI • PPM • ENTERPRISE DELIVERY</div>
+              <div className="eyebrow">
+                AI TRANSFORMATION • AGENTIC AI • ENTERPRISE EXECUTION
+              </div>
 
-              <h1>AI Transformation &amp; Enterprise Delivery Leader</h1>
+              <h1>AI Transformation &amp; Agent Factory Leader</h1>
 
               <p className="hero-statement">
-                Where enterprise execution meets Agentic AI.
+                From business problem to production AI.
               </p>
 
               <p className="hero-description">
-                26+ years transforming portfolios, products, and technology
-                delivery — now applying Agentic AI to reinvent how enterprises
-                plan, govern, and execute.
+                I connect enterprise strategy, product thinking, technology
+                delivery, and Agentic AI to turn business problems into
+                working AI capabilities—and help organizations move them
+                from experimentation to adoption and measurable value.
               </p>
 
               <div className="hero-actions">
-                <a href="#ai-transformation" className="button button-primary">
-                  Explore My Work
+                <a href="#agent-factory" className="button button-primary">
+                  Explore the Agent Factory
                 </a>
-                <a href="#contact" className="button button-secondary">
-                  Let's Connect
+
+                <a href="#systems" className="button button-secondary">
+                  See What I Build
                 </a>
+              </div>
+
+              <div className="hero-tags">
+                <span>AI Strategy</span>
+                <span>AI Product Leadership</span>
+                <span>Agentic AI</span>
+                <span>AI Operating Models</span>
+                <span>Enterprise PPM</span>
               </div>
             </div>
 
-            <div className="hero-proof">
-              <div className="proof-card">
-                <span className="proof-number">26+</span>
-                <span className="proof-label">
-                  Years Enterprise Transformation
-                </span>
+            <div className="hero-panel">
+              <div className="hero-panel-label">THE ROLE I PLAY</div>
+
+              <div className="hero-chain">
+                <div>
+                  <span>01</span>
+                  <strong>Business Problem</strong>
+                </div>
+
+                <div className="chain-arrow">↓</div>
+
+                <div>
+                  <span>02</span>
+                  <strong>AI Opportunity</strong>
+                </div>
+
+                <div className="chain-arrow">↓</div>
+
+                <div>
+                  <span>03</span>
+                  <strong>AI Product</strong>
+                </div>
+
+                <div className="chain-arrow">↓</div>
+
+                <div>
+                  <span>04</span>
+                  <strong>Production AI</strong>
+                </div>
+
+                <div className="chain-arrow">↓</div>
+
+                <div>
+                  <span>05</span>
+                  <strong>Business Value</strong>
+                </div>
               </div>
 
-              <div className="proof-card">
-                <span className="proof-number">1,500+</span>
-                <span className="proof-label">
-                  Hours Reclaimed Annually
-                </span>
-              </div>
-
-              <div className="proof-card">
-                <span className="proof-number">30%</span>
-                <span className="proof-label">
-                  Delivery Velocity Improvement
-                </span>
-              </div>
-
-              <div className="proof-card">
-                <span className="proof-number">3×</span>
-                <span className="proof-label">
-                  Delivery Throughput
-                </span>
+              <div className="hero-panel-footer">
+                <div className="role-discipline">
+                  <strong>STRATEGY</strong>
+                  <span>Frame the problem</span>
+                </div>
+                <div className="role-discipline">
+                  <strong>PRODUCT</strong>
+                  <span>Shape the solution</span>
+                </div>
+                <div className="role-discipline">
+                  <strong>DELIVERY</strong>
+                  <span>Get it into production</span>
+                </div>
+                <div className="role-ai">
+                  <strong>AI</strong>
+                  <span>Embedded across the journey</span>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* About */}
+        {/* ABOUT */}
         <section id="about" className="section section-light">
           <div className="container two-column">
             <div>
               <div className="section-number">00</div>
-              <h2>Enterprise execution is where transformation becomes real.</h2>
+              <div className="section-kicker">WHY ME</div>
+              <h2>
+                I understand the business problem—and I know how to get the
+                solution built.
+              </h2>
             </div>
 
             <div className="section-copy">
               <p>
-                I bring together three disciplines that are too often managed
-                separately: enterprise transformation, portfolio and program
-                management, and applied AI.
+                I bring together three disciplines that rarely exist deeply
+                in the same leader: enterprise transformation, technology
+                and product delivery, and applied AI.
               </p>
 
               <p>
-                My career has been built around turning strategy into
-                execution — establishing governance, shaping investment
-                portfolios, building delivery models, leading technology
-                programs, and helping organizations move from ideas to
-                measurable outcomes.
+                For more than two decades, I have worked inside complex
+                enterprises turning strategy into execution—building PMOs,
+                shaping portfolios, leading technology programs, modernizing
+                operating models, and working with executives through difficult
+                transformation decisions.
               </p>
 
               <p>
-                Today, I apply that experience to Agentic AI — designing AI
-                operating models, building AI-enabled delivery systems, and
-                creating practical pathways from experimentation to enterprise
-                adoption.
+                Today, I apply that execution experience to AI. I can sit with
+                a business leader to understand the problem, frame the AI
+                opportunity, shape the product, work with FDE and engineering
+                teams, and drive the governance, adoption, and value
+                realization required to make the solution matter.
               </p>
+
+              <div className="credibility-line">
+                <strong>Enterprise transformation.</strong>
+                <strong>AI product leadership.</strong>
+                <strong>Hands-on building.</strong>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* AI Transformation */}
-        <section id="ai-transformation" className="section section-dark">
+        {/* AI TRANSFORMATION */}
+        <section id="ai-transformation" className="section section-light transformation-section">
           <div className="container">
             <div className="section-heading">
               <div className="section-number light">01</div>
               <div>
                 <div className="section-kicker">AI TRANSFORMATION</div>
-                <h2>From AI strategy to working enterprise systems.</h2>
+                <h2>AI transformation is an operating model problem.</h2>
               </div>
             </div>
 
             <p className="section-intro dark-copy">
-              AI transformation is not simply selecting a model or launching
-              a chatbot. It requires a disciplined path from business strategy
-              through architecture, delivery, governance, enablement, and
-              scale.
+              The model is only one component. Sustainable enterprise AI
+              requires a disciplined path from business strategy through
+              product definition, technology delivery, governance, adoption,
+              and measurable outcomes.
             </p>
 
-            <div className="transformation-flow">
-              <div className="flow-step">
+            <div className="transformation-grid">
+              <div className="transformation-card">
                 <span>01</span>
-                <strong>Strategy</strong>
+                <h3>Business Strategy</h3>
+                <p>
+                  Connect AI opportunities to strategic priorities, value
+                  pools, operating models, and measurable outcomes.
+                </p>
               </div>
 
-              <div className="flow-arrow">→</div>
-
-              <div className="flow-step">
+              <div className="transformation-card">
                 <span>02</span>
-                <strong>Use Cases</strong>
+                <h3>AI Product</h3>
+                <p>
+                  Translate business problems into users, workflows,
+                  capabilities, backlogs, outcomes, and product roadmaps.
+                </p>
               </div>
 
-              <div className="flow-arrow">→</div>
-
-              <div className="flow-step">
+              <div className="transformation-card">
                 <span>03</span>
-                <strong>Architecture</strong>
+                <h3>Technology</h3>
+                <p>
+                  Work across agents, RAG, models, data, tools, workflows,
+                  enterprise platforms, and integrations.
+                </p>
               </div>
 
-              <div className="flow-arrow">→</div>
-
-              <div className="flow-step">
+              <div className="transformation-card">
                 <span>04</span>
-                <strong>Build</strong>
+                <h3>Enterprise Delivery</h3>
+                <p>
+                  Move from concept to iterative build, testing, deployment,
+                  release, adoption, and continuous improvement.
+                </p>
               </div>
 
-              <div className="flow-arrow">→</div>
-
-              <div className="flow-step">
+              <div className="transformation-card">
                 <span>05</span>
-                <strong>Govern</strong>
+                <h3>Governance</h3>
+                <p>
+                  Establish decision rights, controls, evaluation, security,
+                  risk management, and responsible AI practices.
+                </p>
               </div>
 
-              <div className="flow-arrow">→</div>
-
-              <div className="flow-step">
+              <div className="transformation-card">
                 <span>06</span>
-                <strong>Enable</strong>
-              </div>
-
-              <div className="flow-arrow">→</div>
-
-              <div className="flow-step">
-                <span>07</span>
-                <strong>Scale</strong>
-              </div>
-            </div>
-
-            <div className="capability-grid">
-              <div className="capability-card">
-                <h3>AI Strategy</h3>
+                <h3>Value &amp; Scale</h3>
                 <p>
-                  Connect AI opportunities to business priorities, operating
-                  models, value pools, and measurable outcomes.
-                </p>
-              </div>
-
-              <div className="capability-card">
-                <h3>AI Use Cases</h3>
-                <p>
-                  Identify, evaluate, prioritize, and sequence use cases based
-                  on value, feasibility, risk, and organizational readiness.
-                </p>
-              </div>
-
-              <div className="capability-card">
-                <h3>AI Architecture</h3>
-                <p>
-                  Translate business requirements into practical architectures
-                  spanning agents, RAG, data, models, workflows, and enterprise
-                  platforms.
-                </p>
-              </div>
-
-              <div className="capability-card">
-                <h3>AI Delivery</h3>
-                <p>
-                  Turn concepts into working products through backlogs,
-                  iterative delivery, testing, release, adoption, and
-                  continuous improvement.
-                </p>
-              </div>
-
-              <div className="capability-card">
-                <h3>AI Governance</h3>
-                <p>
-                  Establish the guardrails, decision rights, risk controls, and
-                  governance required for responsible enterprise AI.
-                </p>
-              </div>
-
-              <div className="capability-card">
-                <h3>AI Enablement</h3>
-                <p>
-                  Equip teams with the skills, tools, workflows, and operating
-                  practices required to use AI effectively.
+                  Measure adoption, performance, business outcomes, and value—
+                  then scale the capabilities that prove their worth.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* AI Enabled PPM */}
-        <section id="ai-ppm" className="section section-accent">
+        {/* AGENT FACTORY */}
+        <section id="agent-factory" className="section factory-section">
           <div className="container">
-            <div className="section-heading">
-              <div className="section-number">02</div>
+            <div className="factory-header">
               <div>
-                <div className="section-kicker">AI-ENABLED PPM</div>
-                <h2>Reinventing how enterprises plan, govern, and execute.</h2>
-              </div>
-            </div>
-
-            <div className="ppm-intro">
-              <div className="ppm-lead">
-                <p>
-                  One of my core areas of focus is an{" "}
-                  <strong>
-                    AI-enabled Portfolio &amp; Program Management Operating
-                    Model
-                  </strong>{" "}
-                  — where PPM professionals work alongside Agentic synthetic PM
-                  Agents.
-                </p>
-
-                <p>
-                  The objective is not to replace experienced program leaders.
-                  It is to augment them with a digital workforce that can
-                  continuously analyze portfolio data, manage execution
-                  workflows, surface risks and dependencies, and prepare
-                  decision-ready insights.
+                <div className="section-number">02</div>
+                <div className="section-kicker">INTELLECTUAL CENTERPIECE</div>
+                <h2>The AI Agent Factory</h2>
+                <p className="factory-subtitle">
+                  A repeatable operating model for moving from business
+                  problem to production AI.
                 </p>
               </div>
 
-              <div className="ppm-principle">
-                <span>THE PRINCIPLE</span>
+              <div className="factory-statement">
+                <span>THE OBJECTIVE</span>
                 <strong>
-                  Humans lead decisions.
-                  <br />
-                  Agents accelerate execution.
+                  Industrialize the journey from AI idea to measurable
+                  enterprise value.
                 </strong>
               </div>
             </div>
 
-            <div className="agent-model">
-              <div className="agent-center">
-                <span>AI-ENABLED</span>
-                <strong>PPM OPERATING MODEL</strong>
+            <div className="factory-flow">
+              {factoryStages.map((stage, index) => (
+                <div className="factory-stage" key={stage.number}>
+                  <div className="stage-top">
+                    <span>{stage.number}</span>
+                    {index < factoryStages.length - 1 && (
+                      <div className="stage-line" />
+                    )}
+                  </div>
+
+                  <h3>{stage.title}</h3>
+                  <strong>{stage.subtitle}</strong>
+                  <p>{stage.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="factory-operating-model">
+              <div className="operating-column business-column">
+                <div className="operating-label">BUSINESS LEADERSHIP</div>
+
+                <div className="operating-items">
+                  <span>Strategy &amp; Direction</span>
+                  <span>Business Priorities</span>
+                  <span>Investment Decisions</span>
+                  <span>Tradeoffs &amp; Escalation</span>
+                  <span>Change &amp; Transform</span>
+                  <span>Accountability &amp; Value</span>
+                </div>
               </div>
 
-              <div className="agent-card">
-                <span>01</span>
-                <h3>Portfolio Strategy Agent</h3>
-                <p>
-                  Strategy, investment priorities, and portfolio insights.
-                </p>
+              <div className="operating-middle">
+                <div className="operating-arrow">→</div>
+                <strong>AI PRODUCT<br />LEADERSHIP</strong>
+                <div className="operating-arrow">→</div>
               </div>
 
-              <div className="agent-card">
-                <span>02</span>
-                <h3>Program Manager Agent</h3>
-                <p>
-                  Plans, actions, milestones, coordination, and follow-up.
-                </p>
-              </div>
+              <div className="operating-column">
+                <div className="operating-label">FDE / AI ENGINEERING</div>
 
-              <div className="agent-card">
-                <span>03</span>
-                <h3>Project Manager Agent</h3>
-                <p>
-                  Execution support, status, actions, and delivery workflows.
-                </p>
-              </div>
-
-              <div className="agent-card">
-                <span>04</span>
-                <h3>Risk &amp; Issue Agent</h3>
-                <p>
-                  Early signals, risk patterns, issues, and escalation.
-                </p>
-              </div>
-
-              <div className="agent-card">
-                <span>05</span>
-                <h3>Dependency Agent</h3>
-                <p>
-                  Cross-program dependencies, impacts, and bottlenecks.
-                </p>
-              </div>
-
-              <div className="agent-card">
-                <span>06</span>
-                <h3>Financial &amp; Benefits Agent</h3>
-                <p>
-                  Investment tracking, benefits, value realization, and trends.
-                </p>
-              </div>
-
-              <div className="agent-card">
-                <span>07</span>
-                <h3>Governance Agent</h3>
-                <p>
-                  Controls, decision preparation, compliance, and governance.
-                </p>
-              </div>
-
-              <div className="agent-card">
-                <span>08</span>
-                <h3>Executive Reporting Agent</h3>
-                <p>
-                  Decision-ready insights, portfolio narratives, and reporting.
-                </p>
+                <div className="operating-items">
+                  <span>Solution Architecture</span>
+                  <span>Agent &amp; Workflow Design</span>
+                  <span>Data &amp; Knowledge</span>
+                  <span>Tools &amp; Integrations</span>
+                  <span>Evaluation &amp; Testing</span>
+                  <span>Deployment &amp; Observability</span>
+                </div>
               </div>
             </div>
+
+            <div className="factory-principle">
+              <span>THE PRINCIPLE</span>
+              <strong>
+                Humans lead decisions.
+                <br />
+                Agents accelerate execution.
+              </strong>
+            </div>
+
+            <div className="factory-proof">
+              <div>
+                <span>3×</span>
+                <p>Enterprise AI-enabled delivery throughput</p>
+              </div>
+
+              <div>
+                <span>1,500+</span>
+                <p>Hours reclaimed annually</p>
+              </div>
+
+              <div>
+                <span>30%</span>
+                <p>Delivery velocity improvement</p>
+              </div>
+            </div>
+
+            <p className="proof-note">
+              Enterprise AI outcomes from work led and delivered in an
+              enterprise environment; not all outcomes represent the
+              reference Agent Factory model itself.
+            </p>
           </div>
         </section>
 
-        {/* AI Systems */}
-        <section id="systems" className="section section-light">
+        {/* AI ENABLED PPM */}
+        <section id="ai-ppm" className="section section-light">
           <div className="container">
             <div className="section-heading">
               <div className="section-number">03</div>
               <div>
-                <div className="section-kicker">AI SYSTEMS</div>
-                <h2>From concepts to working AI capabilities.</h2>
+                <div className="section-kicker">FLAGSHIP APPLICATION</div>
+                <h2>AI-Enabled PPM</h2>
               </div>
             </div>
 
-            <p className="section-intro">
-              My work combines enterprise transformation experience with
-              practical experimentation and building across modern AI
-              architectures.
-            </p>
-
-            <div className="systems-grid">
-              <div className="system-card featured">
-                <div className="system-label">FLAGSHIP</div>
-                <h3>AI PMO Agent Factory</h3>
-                <p>
-                  A multi-agent approach to augment portfolio, program, and
-                  project management through synthetic PM capabilities.
-                </p>
-                <div className="tags">
-                  <span>Agentic AI</span>
-                  <span>PPM</span>
-                  <span>RAG</span>
-                </div>
-              </div>
-
-              <div className="system-card">
-                <h3>Enterprise RAG Agent</h3>
-                <p>
-                  Knowledge-grounded AI experiences designed to retrieve,
-                  reason over, and surface enterprise information.
-                </p>
-                <div className="tags">
-                  <span>RAG</span>
-                  <span>Knowledge</span>
-                </div>
-              </div>
-
-              <div className="system-card">
-                <h3>Claude Agentic AI</h3>
-                <p>
-                  Agent-based workflows using Claude to automate knowledge work
-                  and support complex enterprise processes.
-                </p>
-                <div className="tags">
-                  <span>Claude</span>
-                  <span>Agents</span>
-                </div>
-              </div>
-
-              <div className="system-card">
-                <h3>Voice AI Agent</h3>
-                <p>
-                  Conversational AI concepts connecting voice interfaces with
-                  intelligent workflows and business processes.
-                </p>
-                <div className="tags">
-                  <span>Voice AI</span>
-                  <span>Automation</span>
-                </div>
-              </div>
-
-              <div className="system-card">
-                <h3>AI Governance Agent</h3>
-                <p>
-                  AI-assisted governance concepts designed to improve
-                  consistency, controls, and decision support.
-                </p>
-                <div className="tags">
-                  <span>Governance</span>
-                  <span>Risk</span>
-                </div>
-              </div>
-
-              <div className="system-card">
-                <h3>AI Enablement Coach</h3>
-                <p>
-                  Contextual AI coaching designed to help business users
-                  understand and adopt AI within their daily workflows.
-                </p>
-                <div className="tags">
-                  <span>Enablement</span>
-                  <span>Adoption</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Enterprise Execution System */}
-        <section id="execution-system" className="section execution-system-section">
-          <div className="container">
-            <div className="section-heading">
-              <div className="section-number">04</div>
+            <div className="ppm-lead-grid">
               <div>
-                <div className="section-kicker">
-                  ENTERPRISE EXECUTION SYSTEM
-                </div>
-                <h2>
-                  From strategy to value — with intelligence embedded across
-                  execution.
-                </h2>
-              </div>
-            </div>
-
-            <div className="execution-intro">
-              <p>
-                The next step beyond an AI-enabled PMO is an{" "}
-                <strong>enterprise execution system</strong>.
-              </p>
-
-              <p>
-                AI should not sit beside the operating model. It should operate
-                across it — sensing what is happening, reasoning across
-                context, preparing decisions, coordinating work, and learning
-                from outcomes.
-              </p>
-            </div>
-
-            {/* Human Leadership */}
-            <div className="execution-layer human-layer">
-              <div className="execution-layer-label">
-                <span>01</span>
-                <strong>HUMAN LEADERSHIP</strong>
-                <small>Judgment, direction &amp; accountability</small>
+                <h3>
+                  Reinventing enterprise execution with a digital workforce.
+                </h3>
               </div>
 
-              <div className="human-grid">
-                <div className="human-card">
-                  <span>01</span>
-                  <strong>Strategy &amp; Direction</strong>
-                </div>
-
-                <div className="human-card">
-                  <span>02</span>
-                  <strong>Investment Decisions</strong>
-                </div>
-
-                <div className="human-card">
-                  <span>03</span>
-                  <strong>Tradeoffs &amp; Escalation</strong>
-                </div>
-
-                <div className="human-card">
-                  <span>04</span>
-                  <strong>Change &amp; Transform</strong>
-                </div>
-
-                <div className="human-card">
-                  <span>05</span>
-                  <strong>Accountability &amp; Value</strong>
-                </div>
-              </div>
-            </div>
-
-            <div className="execution-connector">
-              <span>AI AUGMENTS HUMAN DECISION-MAKING</span>
-              <div className="connector-line"></div>
-            </div>
-
-            {/* Agent Layer */}
-            <div className="execution-layer agent-execution-layer">
-              <div className="execution-layer-label">
-                <span>02</span>
-                <strong>AI AGENT LAYER</strong>
-                <small>Continuous intelligence &amp; execution support</small>
-              </div>
-
-              <div className="execution-agent-grid">
-                <div className="execution-agent-card">
-                  <span>01</span>
-                  <strong>Portfolio Roadmap Agent</strong>
-                  <p>Connect strategy, roadmap and investment priorities.</p>
-                </div>
-
-                <div className="execution-agent-card">
-                  <span>02</span>
-                  <strong>Demand Intake Agent</strong>
-                  <p>Capture, structure and qualify incoming demand.</p>
-                </div>
-
-                <div className="execution-agent-card">
-                  <span>03</span>
-                  <strong>Prioritization Agent</strong>
-                  <p>Evaluate value, feasibility, risk and capacity.</p>
-                </div>
-
-                <div className="execution-agent-card">
-                  <span>04</span>
-                  <strong>Resource Capacity Agent</strong>
-                  <p>Identify capacity constraints and resource conflicts.</p>
-                </div>
-
-                <div className="execution-agent-card">
-                  <span>05</span>
-                  <strong>Financial &amp; Benefits Agent</strong>
-                  <p>Track investment, benefits and value realization.</p>
-                </div>
-
-                <div className="execution-agent-card featured-agent">
-                  <span>06</span>
-                  <strong>Synthetic PM Agent</strong>
-                  <p>
-                    Plan, coordinate, track and advance execution across work.
-                  </p>
-                </div>
-
-                <div className="execution-agent-card">
-                  <span>07</span>
-                  <strong>Risk &amp; Issue Agent</strong>
-                  <p>Continuously surface signals, risks and emerging issues.</p>
-                </div>
-
-                <div className="execution-agent-card">
-                  <span>08</span>
-                  <strong>Executive Reporting Agent</strong>
-                  <p>
-                    Convert portfolio signals into decision-ready insights.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="execution-connector">
-              <span>INTELLIGENCE FLOWS INTO EXECUTION</span>
-              <div className="connector-line"></div>
-            </div>
-
-            {/* Enterprise Execution */}
-            <div className="execution-layer enterprise-layer">
-              <div className="execution-layer-label">
-                <span>03</span>
-                <strong>ENTERPRISE EXECUTION</strong>
-                <small>Strategy translated into measurable outcomes</small>
-              </div>
-
-              <div className="enterprise-flow">
-                <div className="enterprise-step">
-                  <span>01</span>
-                  <strong>Strategy</strong>
-                  <small>Direction</small>
-                </div>
-
-                <div className="enterprise-arrow">→</div>
-
-                <div className="enterprise-step">
-                  <span>02</span>
-                  <strong>Portfolio</strong>
-                  <small>Investment</small>
-                </div>
-
-                <div className="enterprise-arrow">→</div>
-
-                <div className="enterprise-step">
-                  <span>03</span>
-                  <strong>Programs</strong>
-                  <small>Coordination</small>
-                </div>
-
-                <div className="enterprise-arrow">→</div>
-
-                <div className="enterprise-step">
-                  <span>04</span>
-                  <strong>Projects / Products</strong>
-                  <small>Delivery</small>
-                </div>
-
-                <div className="enterprise-arrow">→</div>
-
-                <div className="enterprise-step">
-                  <span>05</span>
-                  <strong>Execution</strong>
-                  <small>Outcomes</small>
-                </div>
-
-                <div className="enterprise-arrow">→</div>
-
-                <div className="enterprise-step value-step">
-                  <span>06</span>
-                  <strong>Value Realization</strong>
-                  <small>Impact</small>
-                </div>
-              </div>
-            </div>
-
-            {/* How the system works */}
-            <div className="system-operating-model">
-              <div className="system-operating-header">
-                <div>
-                  <div className="section-kicker">HOW THE SYSTEM WORKS</div>
-                  <h3>Sense → Reason → Recommend → Act → Learn</h3>
-                </div>
+              <div className="section-copy">
+                <p>
+                  One of the clearest applications of the Agent Factory model
+                  is Portfolio &amp; Program Management.
+                </p>
 
                 <p>
-                  Agents continuously convert enterprise signals into
-                  actionable intelligence while humans retain decision rights
-                  and accountability.
+                  Instead of treating AI as another reporting tool, the model
+                  creates an intelligent workforce that continuously senses
+                  portfolio conditions, analyzes information, prepares
+                  decisions, coordinates execution, and learns from outcomes.
                 </p>
-              </div>
-
-              <div className="sense-flow">
-                <div className="sense-step">
-                  <span>01</span>
-                  <strong>Sense</strong>
-                  <p>
-                    Ingest portfolio, delivery, financial and operational
-                    signals.
-                  </p>
-                </div>
-
-                <div className="sense-arrow">→</div>
-
-                <div className="sense-step">
-                  <span>02</span>
-                  <strong>Reason</strong>
-                  <p>
-                    Correlate context across initiatives, teams and work.
-                  </p>
-                </div>
-
-                <div className="sense-arrow">→</div>
-
-                <div className="sense-step">
-                  <span>03</span>
-                  <strong>Recommend</strong>
-                  <p>
-                    Surface decisions, risks, priorities and opportunities.
-                  </p>
-                </div>
-
-                <div className="sense-arrow">→</div>
-
-                <div className="sense-step">
-                  <span>04</span>
-                  <strong>Act</strong>
-                  <p>
-                    Trigger workflows and coordinate actions within guardrails.
-                  </p>
-                </div>
-
-                <div className="sense-arrow">→</div>
-
-                <div className="sense-step">
-                  <span>05</span>
-                  <strong>Learn</strong>
-                  <p>
-                    Capture outcomes and continuously improve recommendations.
-                  </p>
-                </div>
               </div>
             </div>
 
-            {/* Human / Agent boundary */}
             <div className="human-agent-boundary">
-              <div className="boundary-column">
-                <div className="boundary-label">HUMANS OWN</div>
-
+              <div className="boundary-side human">
+                <span>HUMANS OWN</span>
+                <strong>Judgment &amp; Accountability</strong>
                 <ul>
                   <li>Strategic direction</li>
                   <li>Investment decisions</li>
                   <li>Tradeoffs</li>
                   <li>Exceptions</li>
-                  <li>Change</li>
+                  <li>Change &amp; Transform</li>
                   <li>Accountability</li>
                 </ul>
               </div>
 
-              <div className="boundary-divider">
+              <div className="boundary-center">
+                <div>HUMAN</div>
                 <span>+</span>
+                <div>AGENT</div>
               </div>
 
-              <div className="boundary-column">
-                <div className="boundary-label">AGENTS SUPPORT</div>
-
+              <div className="boundary-side agent">
+                <span>AGENTS SUPPORT</span>
+                <strong>Intelligence &amp; Execution</strong>
                 <ul>
                   <li>Continuous sensing</li>
                   <li>Analysis</li>
@@ -746,68 +578,221 @@ function App() {
               </div>
             </div>
 
-            {/* Why it matters */}
-            <div className="execution-impact">
-              <div className="section-kicker">WHY THIS MATTERS</div>
-
-              <div className="impact-grid">
-                <div className="impact-card">
-                  <span>01</span>
-                  <h3>Faster Decisions</h3>
-                  <p>
-                    Leaders receive context and options before issues become
-                    escalations.
-                  </p>
+            <div className="agent-grid">
+              {agentRoles.map(([number, title, description]) => (
+                <div className="agent-role-card" key={number}>
+                  <span>{number}</span>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
                 </div>
+              ))}
+            </div>
 
-                <div className="impact-card">
-                  <span>02</span>
-                  <h3>Higher Execution Capacity</h3>
-                  <p>
-                    Agents absorb repetitive coordination and administrative
-                    work so people can focus on higher-value decisions.
-                  </p>
-                </div>
+            <div className="execution-chain">
+              <span>STRATEGY</span>
+              <b>→</b>
+              <span>PORTFOLIO</span>
+              <b>→</b>
+              <span>PROGRAMS</span>
+              <b>→</b>
+              <span>PROJECTS / PRODUCTS</span>
+              <b>→</b>
+              <span>EXECUTION</span>
+              <b>→</b>
+              <span>VALUE</span>
+            </div>
+          </div>
+        </section>
 
-                <div className="impact-card">
-                  <span>03</span>
-                  <h3>Continuous Portfolio Intelligence</h3>
-                  <p>
-                    The portfolio becomes a continuously sensing system rather
-                    than a periodic reporting exercise.
-                  </p>
-                </div>
+        {/* SYSTEMS */}
+        <section id="systems" className="section section-dark systems-section">
+          <div className="container">
+            <div className="section-heading">
+              <div className="section-number light">04</div>
+              <div>
+                <div className="section-kicker">WHAT I BUILD</div>
+                <h2>Strategy matters. Working systems matter more.</h2>
               </div>
             </div>
 
-            {/* Agent Factory */}
-            <div className="agent-factory-callout">
+            <div className="systems-intro">
+              <p>
+                I believe AI transformation leaders need enough technical
+                depth to understand how the systems work—not simply describe
+                them. My hands-on work spans RAG, agents, workflows,
+                enterprise AI assistants, Copilot, Claude, knowledge systems,
+                and AI-enabled delivery.
+              </p>
+            </div>
+
+            <div className="systems-grid-new">
+              {systems.map((system) => (
+                <article
+                  className={`system-card-new ${
+                    system.featured ? "featured-system" : ""
+                  }`}
+                  key={system.title}
+                >
+                  <div className="system-label">{system.label}</div>
+
+                  <h3>{system.title}</h3>
+
+                  <p>{system.description}</p>
+
+                  <div className="tags">
+                    {system.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+
+                  {system.outcome && (
+                    <div className="system-outcome">
+                      <span>PROVEN OUTCOME</span>
+                      <strong>{system.outcome}</strong>
+                    </div>
+                  )}
+
+                  <div className="system-link">
+                    {system.status} · BUILD DETAIL →
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="build-positioning">
               <div>
-                <div className="section-kicker">THE AGENT FACTORY</div>
-                <h3>One operating model. Many specialized agents.</h3>
+                <span>MY POSITION</span>
+                <strong>I lead the factory.</strong>
+              </div>
+
+              <div className="build-divider">+</div>
+
+              <div>
+                <span>MY TECHNICAL DEPTH</span>
+                <strong>I can build inside the factory.</strong>
+              </div>
+            </div>
+
+            <div className="build-proof">
+              <div className="build-proof-header">
+                <span>HANDS-ON EVIDENCE</span>
+                <h3>Two builds. Two different AI capabilities.</h3>
                 <p>
-                  The AI PMO Agent Factory provides the repeatable mechanism
-                  for identifying, designing, building, governing, deploying,
-                  and continuously improving specialized enterprise agents.
+                  The projects below are deliberately complementary: one demonstrates knowledge retrieval and AI evaluation; the other demonstrates an agent that can reason, maintain context, call tools, and execute a real business action.
                 </p>
               </div>
 
-              <div className="factory-flow">
-                <span>Define</span>
-                <b>→</b>
-                <span>Design</span>
-                <b>→</b>
-                <span>Build</span>
-                <b>→</b>
-                <span>Govern</span>
-                <b>→</b>
-                <span>Deploy</span>
-                <b>→</b>
-                <span>Learn</span>
+              <div className="build-case-grid">
+                <article className="build-case-card">
+                  <div className="build-case-number">01</div>
+                  <div className="build-case-label">RAG / KNOWLEDGE AI</div>
+                  <h4>Grounded knowledge, measured retrieval.</h4>
+                  <p>
+                    Built and ran a modular RAG pipeline from document chunking through embeddings, vector storage, retrieval, reranking, and Claude generation. Progressively tested vector search, BM25 hybrid search, summary-indexed embeddings, and Claude-powered reranking.
+                  </p>
+                  <div className="build-case-metrics">
+                    <span>Precision</span>
+                    <span>Recall</span>
+                    <span>F1</span>
+                    <span>MRR</span>
+                    <span>Accuracy</span>
+                  </div>
+                </article>
+
+                <article className="build-case-card">
+                  <div className="build-case-number">02</div>
+                  <div className="build-case-label">VOICE / AGENTIC AI</div>
+                  <h4>Conversation that can take action.</h4>
+                  <p>
+                    Built and deployed a voice AI receptionist using Twilio, Claude, Node.js/Fastify, WebSockets, and Google Calendar. The agent handles natural multi-turn conversation and uses tool calls to check availability, book, and reschedule appointments.
+                  </p>
+                  <div className="build-case-metrics">
+                    <span>Voice</span>
+                    <span>Tool Use</span>
+                    <span>State</span>
+                    <span>Calendar</span>
+                    <span>Cloud Deploy</span>
+                  </div>
+                </article>
+              </div>
+
+              <div className="engineering-reality">
+                <div>
+                  <span>ENGINEERING REALITY</span>
+                  <strong>Real systems expose real failure modes.</strong>
+                </div>
+                <p>
+                  Debugging included SDK/model deprecations, API and rate-limit issues, environment configuration, WebSocket URL construction, structured conversation-state loss, credential protection, cloud port binding, and a UTC/Eastern timezone defect that only appeared after deployment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ENTERPRISE EXECUTION */}
+        <section className="section execution-section">
+          <div className="container">
+            <div className="section-heading">
+              <div className="section-number">05</div>
+              <div>
+                <div className="section-kicker">ENTERPRISE EXECUTION SYSTEM</div>
+                <h2>Intelligence embedded across execution.</h2>
               </div>
             </div>
 
-            <div className="execution-closing">
+            <p className="section-intro">
+              The long-term opportunity is bigger than automating individual
+              PMO tasks. It is creating an enterprise execution system where
+              intelligence is continuously embedded across the lifecycle.
+            </p>
+
+            <div className="execution-layers">
+              <div className="execution-layer human-layer">
+                <div className="layer-title">
+                  <span>HUMAN LEADERSHIP</span>
+                  <strong>Judgment</strong>
+                </div>
+
+                <div className="layer-items">
+                  <span>Strategy &amp; Direction</span>
+                  <span>Investment Decisions</span>
+                  <span>Tradeoffs &amp; Escalation</span>
+                  <span>Change &amp; Transform</span>
+                  <span>Accountability &amp; Value</span>
+                </div>
+              </div>
+
+              <div className="execution-layer ai-layer">
+                <div className="layer-title">
+                  <span>AI AGENT LAYER</span>
+                  <strong>Intelligence</strong>
+                </div>
+
+                <div className="layer-items">
+                  <span>Sense</span>
+                  <span>Reason</span>
+                  <span>Recommend</span>
+                  <span>Act</span>
+                  <span>Learn</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="execution-flow">
+              <span>STRATEGY</span>
+              <i>→</i>
+              <span>PORTFOLIO</span>
+              <i>→</i>
+              <span>PROGRAMS</span>
+              <i>→</i>
+              <span>PROJECTS / PRODUCTS</span>
+              <i>→</i>
+              <span>EXECUTION</span>
+              <i>→</i>
+              <span>VALUE REALIZATION</span>
+            </div>
+
+            <div className="execution-quote">
               <p>
                 “The opportunity is not to automate the PMO. It is to turn
                 enterprise execution into an intelligent system.”
@@ -816,327 +801,119 @@ function App() {
           </div>
         </section>
 
-        {/* Experience */}
-        <section id="experience" className="section section-dark">
+        {/* EXPERIENCE */}
+        <section id="experience" className="section section-light experience-section">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number light">05</div>
+              <div className="section-number light">06</div>
               <div>
                 <div className="section-kicker">ENTERPRISE EXPERIENCE</div>
-                <h2>26+ years of enterprise execution.</h2>
+                <h2>26+ years of learning how enterprises actually work.</h2>
               </div>
             </div>
 
-            <div className="experience-intro">
-              <p>
-                Before AI became the focus, I spent decades building the
-                operating discipline required to make transformation work:
-                portfolio governance, PMO design, program delivery, Agile
-                transformation, executive reporting, and enterprise change.
-              </p>
+            <p className="section-intro dark-copy">
+              My AI work is grounded in years of enterprise transformation,
+              technology delivery, portfolio management, governance, and
+              executive leadership.
+            </p>
+
+            <div className="experience-timeline">
+              {experience.map((item) => (
+                <div className="experience-row" key={`${item.company}-${item.years}`}>
+                  <div className="experience-years">{item.years}</div>
+
+                  <div className="experience-company">
+                    <h3>{item.company}</h3>
+                    <strong>{item.role}</strong>
+                  </div>
+
+                  <p>{item.description}</p>
+                </div>
+              ))}
             </div>
 
-            <div className="experience-grid">
-              <div className="experience-card">
-                <span>01</span>
-                <h3>Portfolio &amp; PPM</h3>
-                <p>
-                  Enterprise intake, prioritization, investment evaluation,
-                  portfolio governance, roadmaps, financial alignment, and
-                  benefit realization.
-                </p>
+            <div className="experience-bottom">
+              <div>
+                <span>ENTERPRISE TRANSFORMATION</span>
+                <strong>Strategy → Execution</strong>
               </div>
 
-              <div className="experience-card">
-                <span>02</span>
-                <h3>Program &amp; Delivery</h3>
-                <p>
-                  Complex technology delivery, cross-functional dependencies,
-                  Agile execution, program risks, issues, milestones, and
-                  delivery performance.
-                </p>
+              <div>
+                <span>AI TRANSFORMATION</span>
+                <strong>Problem → Product → Value</strong>
               </div>
 
-              <div className="experience-card">
-                <span>03</span>
-                <h3>Enterprise Transformation</h3>
-                <p>
-                  PMO transformation, operating model modernization, governance
-                  frameworks, Agile adoption, organizational change, and
-                  executive advisory.
-                </p>
-              </div>
-
-              <div className="experience-card">
-                <span>04</span>
-                <h3>AI Transformation</h3>
-                <p>
-                  Enterprise AI assistants, Agentic AI, Copilot, Claude, AI
-                  governance, AI enablement, use-case prioritization, and
-                  working AI solutions.
-                </p>
-              </div>
-            </div>
-
-            <div className="career-timeline">
-              <div className="timeline-item">
-                <div className="timeline-year">2025 — Present</div>
-                <div>
-                  <h3>Infor</h3>
-                  <p>
-                    Enterprise AI Factory / AI Assistant / Agentic AI
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-year">2021 — 2025</div>
-                <div>
-                  <h3>Infor</h3>
-                  <p>
-                    Agile Portfolio &amp; Governance Transformation / PMO
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-year">2021</div>
-                <div>
-                  <h3>Disney</h3>
-                  <p>
-                    Strategic Agile Advisor / PMO Transformation
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-year">2014 — 2021</div>
-                <div>
-                  <h3>Alvarez &amp; Marsal</h3>
-                  <p>
-                    Governance &amp; PMO Leadership
-                  </p>
-                </div>
-              </div>
-
-              <div className="timeline-item">
-                <div className="timeline-year">2007 — 2014</div>
-                <div>
-                  <h3>Travelers</h3>
-                  <p>
-                    Enterprise Technology / Program Delivery
-                  </p>
-                </div>
+              <div>
+                <span>LEADERSHIP</span>
+                <strong>Business + Product + Technology</strong>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Thought Leadership */}
-        <section id="thought-leadership" className="section section-light">
+        {/* INSIGHTS */}
+        <section id="insights" className="section section-light">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number">06</div>
+              <div className="section-number">07</div>
               <div>
-                <div className="section-kicker">THOUGHT LEADERSHIP</div>
-                <h2>Ideas shaped by experience, not hype.</h2>
+                <div className="section-kicker">INSIGHTS</div>
+                <h2>Ideas shaped by experience, not AI hype.</h2>
               </div>
             </div>
 
-            <div className="thought-leadership-intro">
-              <p>
-                The most interesting AI questions are no longer about what the
-                technology can do. They are about how organizations redesign
-                the way work gets done.
-              </p>
-
-              <p>
-                These are the ideas I am exploring at the intersection of
-                enterprise transformation, Agentic AI, PPM, and execution.
-              </p>
-            </div>
-
-            <div className="insights-grid">
-              <article className="insight-card insight-card-featured">
-                <div className="insight-topline">
-                  <span>01</span>
-                  <div className="insight-tags">
-                    <span>PPM</span>
-                    <span>Agentic AI</span>
-                  </div>
-                </div>
-
-                <h3>The Future of Enterprise PMO Is Human + Agent</h3>
-
-                <p className="insight-thesis">
-                  The next generation of PMO will not be defined by more
-                  dashboards, more meetings, or more governance. It will be
-                  defined by a digital workforce that works alongside people to
-                  continuously move execution forward.
-                </p>
-
-                <p className="insight-detail">
-                  Program leaders should spend less time collecting status and
-                  coordinating administrative work — and more time on decisions,
-                  ambiguity, change, and value.
-                </p>
-
-                <div className="insight-footer">
-                  Human judgment + Agentic execution
-                </div>
-              </article>
-
-              <article className="insight-card">
-                <div className="insight-topline">
-                  <span>02</span>
-                  <div className="insight-tags">
-                    <span>AI Transformation</span>
-                    <span>Delivery</span>
-                  </div>
-                </div>
-
-                <h3>From AI Pilots to Enterprise AI Systems</h3>
-
-                <p className="insight-thesis">
-                  The hard part starts after the pilot works. Scaling requires
-                  product ownership, architecture, governance, change,
-                  adoption, and an operating model capable of sustaining the
-                  capability.
-                </p>
-
-                <p className="insight-detail">
-                  A proof of concept demonstrates possibility. An enterprise
-                  system demonstrates repeatability, adoption, controls, value,
-                  and scale.
-                </p>
-
-                <div className="insight-footer">
-                  Experimentation → Enterprise capability
-                </div>
-              </article>
-
-              <article className="insight-card">
-                <div className="insight-topline">
-                  <span>03</span>
-                  <div className="insight-tags">
-                    <span>Operating Model</span>
-                    <span>Transformation</span>
-                  </div>
-                </div>
-
-                <h3>AI Transformation Is an Operating Model Problem</h3>
-
-                <p className="insight-thesis">
-                  Organizations often struggle with AI not because the models
-                  are insufficient, but because roles, processes, decision
-                  rights, data, and incentives were designed for an older way
-                  of working.
-                </p>
-
-                <p className="insight-detail">
-                  Transformation happens when AI becomes part of how decisions
-                  are made and how work actually flows through the organization.
-                </p>
-
-                <div className="insight-footer">
-                  Technology + People + Process
-                </div>
-              </article>
-
-              <article className="insight-card insight-card-wide">
-                <div className="insight-topline">
-                  <span>04</span>
-                  <div className="insight-tags">
-                    <span>Enterprise AI</span>
-                    <span>Execution</span>
-                    <span>PPM</span>
-                  </div>
-                </div>
-
-                <div className="insight-wide-content">
-                  <div>
-                    <h3>The AI-Enabled Enterprise Execution System</h3>
-
-                    <p className="insight-thesis">
-                      The bigger opportunity is not simply an AI-enabled PMO.
-                      It is a system that connects strategy, portfolio,
-                      programs, projects and products, execution, and value
-                      realization.
-                    </p>
-                  </div>
-
-                  <div className="execution-mini-flow">
-                    <span>Strategy</span>
-                    <b>→</b>
-                    <span>Portfolio</span>
-                    <b>→</b>
-                    <span>Programs</span>
-                    <b>→</b>
-                    <span>Execution</span>
-                    <b>→</b>
-                    <span>Value</span>
-                  </div>
-                </div>
-
-                <p className="insight-detail">
-                  Agents can operate across that flow — sensing information,
-                  preparing decisions, coordinating work, managing risks and
-                  dependencies, and helping convert strategy into measurable
-                  value.
-                </p>
-
-                <div className="insight-footer">
-                  Strategy → Execution → Value realization
-                </div>
-              </article>
-            </div>
-
-            <div className="thought-leadership-closing">
-              <p>
-                Enterprise AI will create the most value when it becomes part
-                of the operating system of the business — not another
-                technology layer sitting beside it.
-              </p>
+            <div className="insights-grid-new">
+              {insights.map((insight) => (
+                <article className="insight-card-new" key={insight.number}>
+                  <span>{insight.number}</span>
+                  <h3>{insight.title}</h3>
+                  <p>{insight.description}</p>
+                  <div>READ MORE →</div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Ask AI */}
+        {/* ASK AI */}
         <section className="ask-ai">
           <div className="container ask-ai-inner">
             <div>
               <div className="section-kicker">COMING SOON</div>
               <h2>Ask my AI.</h2>
               <p>
-                An AI assistant trained around my experience, frameworks,
+                An AI knowledge agent built around my experience, frameworks,
                 perspectives, and approach to enterprise AI transformation.
               </p>
             </div>
 
             <div className="ask-ai-status">
-              <span className="status-dot"></span>
+              <span className="status-dot" />
               AI Knowledge Agent
             </div>
           </div>
         </section>
 
-        {/* Contact */}
+        {/* CONTACT */}
         <section id="contact" className="section contact-section">
           <div className="container contact-inner">
             <div>
-              <div className="section-number">07</div>
+              <div className="section-number">08</div>
               <div className="section-kicker">LET'S CONNECT</div>
+
               <h2>
-                Let's talk about AI transformation, PPM, and enterprise
-                execution.
+                Let's talk about turning enterprise problems into AI
+                capabilities.
               </h2>
             </div>
 
             <div className="contact-details">
               <p>
-                Whether you're building an AI strategy, modernizing an
-                enterprise PMO, or looking to move AI from experimentation into
-                production, I'd welcome the conversation.
+                Whether you're building an AI strategy, establishing an Agent
+                Factory, modernizing enterprise execution, or looking to move
+                AI from experimentation into production, I'd welcome the
+                conversation.
               </p>
 
               <a
@@ -1159,11 +936,12 @@ function App() {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="footer">
         <div className="container footer-inner">
           <span>© {new Date().getFullYear()} Sandeep Bhatnagar</span>
-          <span>AI Transformation • PPM • Enterprise Delivery</span>
+          <span>
+            AI Transformation • Agentic AI • Enterprise Execution
+          </span>
         </div>
       </footer>
     </div>
