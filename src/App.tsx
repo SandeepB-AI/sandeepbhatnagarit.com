@@ -924,7 +924,7 @@ function App() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/sandeep-bhatnagar"
+                href="https://www.linkedin.com/in/sandeep-bhatnagar-a4518517/"
                 target="_blank"
                 rel="noreferrer"
                 className="linkedin-link"
