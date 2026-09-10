@@ -290,7 +290,7 @@ function App() {
               <div className="section-number">00</div>
               <div className="section-kicker">WHY ME</div>
               <h2>
-                I understand the business problem—and I know how to get the
+                I understand the business problem and I know how to get the
                 solution built.
               </h2>
             </div>
