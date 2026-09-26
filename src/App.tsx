@@ -379,12 +379,14 @@ function App() {
             <div className="build-proof">
               <div className="build-proof-header">
                 <span>HANDS-ON EVIDENCE</span>
-                <h3>Two builds. Two different kinds of AI capability.</h3>
+                <h3>Two deep builds, plus a growing library of everyday agents.</h3>
                 <p>
-                  These two are deliberately different: one is about
+                  The first two are deliberately different: one is about
                   retrieval and evaluation, the other is about an agent
                   that can reason, hold context, call tools, and take a
-                  real action.
+                  real action. Alongside them, I keep building smaller
+                  Claude Skills and Agents that remove everyday friction
+                  from delivery work.
                 </p>
               </div>
 
@@ -429,6 +431,33 @@ function App() {
                     <span>Cloud Deploy</span>
                   </div>
                 </article>
+
+                <article className="build-case-card">
+                  <div className="build-case-number">03</div>
+                  <div className="build-case-label">CLAUDE SKILLS / AGENTS</div>
+                  <h4>A growing library of day-to-day agents.</h4>
+                  <p>
+                    Beyond the two systems above, I've built a set of Claude
+                    Skills and Agents that remove real day-to-day friction:
+                    turning meeting notes into follow-up action items,
+                    updating the project plan from those follow-ups,
+                    generating status reports automatically, and updating
+                    the risk register without manual entry. On the delivery
+                    side, I've built a BA Agent that turns requirements into
+                    Agile user stories and BDD scenarios and creates them
+                    directly in Jira, a TDD Agent, and an end-to-end QA
+                    regression scripting agent.
+                  </p>
+                  <div className="build-case-metrics">
+                    <span>Meeting Follow-ups</span>
+                    <span>Project Plan Updates</span>
+                    <span>Status Reporting</span>
+                    <span>Risk Register</span>
+                    <span>BA / User Stories</span>
+                    <span>TDD Agent</span>
+                    <span>E2E QA Scripting</span>
+                  </div>
+                </article>
               </div>
 
               <div className="engineering-reality">
@@ -460,6 +489,12 @@ function App() {
                 <p className="factory-subtitle">
                   A repeatable way to move a business problem to production
                   AI.
+                </p>
+
+                <p className="factory-team-note">
+                  I lead a team of AI engineers who build inside this model,
+                  turning each stage into working AI systems for the
+                  business.
                 </p>
               </div>
 
@@ -582,8 +617,8 @@ function App() {
 
             <p className="section-intro dark-copy">
               My AI work is grounded in years of enterprise transformation,
-              technology delivery, portfolio management, governance, and
-              executive leadership.
+              technology delivery, PMO and PPM leadership, TMO, governance,
+              and executive leadership.
             </p>
 
             <div className="experience-timeline">
@@ -652,7 +687,7 @@ function App() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/sandeep-bhatnagar"
+                href="https://www.linkedin.com/in/sandeep-bhatnagar-a4518517/"
                 target="_blank"
                 rel="noreferrer"
                 className="linkedin-link"
@@ -680,3 +715,4 @@ function App() {
 }
 
 export default App;
+

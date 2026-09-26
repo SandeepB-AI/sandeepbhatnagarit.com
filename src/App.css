@@ -637,7 +637,7 @@ a {
 
 .build-case-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1px;
   margin-top: 36px;
   background: var(--dark-line);
@@ -666,6 +666,10 @@ a {
 
 .build-case-card:nth-child(2) .build-case-label {
   color: var(--accent-teal);
+}
+
+.build-case-card:nth-child(3) .build-case-label {
+  color: var(--accent-amber);
 }
 
 .build-case-card h4 {
@@ -751,6 +755,15 @@ a {
   color: var(--ink-soft);
   font-size: 16px;
   line-height: 1.6;
+}
+
+.factory-team-note {
+  margin: 12px 0 0;
+  max-width: 480px;
+  color: var(--ink-mute);
+  font-size: 14px;
+  line-height: 1.6;
+  font-style: italic;
 }
 
 .factory-statement {
