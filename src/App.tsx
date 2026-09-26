@@ -91,6 +91,22 @@ const systems = [
     tags: ["PPM", "Agentic AI", "Operating Model"],
     status: "REFERENCE OPERATING MODEL",
   },
+  {
+    label: "AGENT ENGINEERING",
+    title: "Claude Skills & Agent Workflows",
+    description:
+      "Hands-on agent and skill development using Claude capabilities, tool use, structured workflows, context engineering, and human-agent handoffs.",
+    tags: ["Claude Skills", "Claude Agents", "Tool Use", "MCP"],
+    status: "HANDS-ON CAPABILITY",
+  },
+  {
+    label: "CLOUD AI",
+    title: "Cloud Agent Deployment",
+    description:
+      "Hands-on exploration and deployment of AI agents across AWS Bedrock with boto3 and Microsoft Foundry, connecting platform capabilities to enterprise use cases.",
+    tags: ["AWS Bedrock", "boto3", "Microsoft Foundry", "Agents"],
+    status: "HANDS-ON PLATFORM",
+  },
 ];
 
 const experience = [
@@ -204,6 +220,11 @@ function App() {
                 from experimentation to adoption and measurable value.
               </p>
 
+              <p className="hero-team-statement">
+                I help engineering teams build what matters—and help the
+                people doing the work grow.
+              </p>
+
               <div className="hero-actions">
                 <a href="#agent-factory" className="button button-primary">
                   Explore the Agent Factory
@@ -218,7 +239,12 @@ function App() {
                 <span>AI Strategy</span>
                 <span>AI Product Leadership</span>
                 <span>Agentic AI</span>
-                <span>AI Operating Models</span>
+                <span>AI Engineering</span>
+                <span>Python</span>
+                <span>RAG</span>
+                <span>AWS Bedrock</span>
+                <span>Microsoft Foundry</span>
+                <span>AI Governance</span>
                 <span>Enterprise PPM</span>
               </div>
             </div>
@@ -262,23 +288,37 @@ function App() {
               </div>
 
               <div className="hero-panel-footer">
-                <div className="role-discipline">
-                  <strong>STRATEGY</strong>
-                  <span>Frame the problem</span>
-                </div>
-                <div className="role-discipline">
-                  <strong>PRODUCT</strong>
-                  <span>Shape the solution</span>
-                </div>
-                <div className="role-discipline">
-                  <strong>DELIVERY</strong>
-                  <span>Get it into production</span>
-                </div>
-                <div className="role-ai">
-                  <strong>AI</strong>
-                  <span>Embedded across the journey</span>
-                </div>
+                <span>STRATEGY</span>
+                <span>PRODUCT</span>
+                <span>DELIVERY</span>
+                <span>AI</span>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI ENGINEERING SIGNAL */}
+        <section className="ai-signal-strip">
+          <div className="container">
+            <div className="signal-label">AI ENGINEERING &amp; TECHNOLOGY</div>
+            <div className="signal-items">
+              <span>Generative AI</span>
+              <span>Agentic AI</span>
+              <span>AI Agents</span>
+              <span>Claude</span>
+              <span>Claude Skills</span>
+              <span>Claude Agents</span>
+              <span>Python</span>
+              <span>RAG</span>
+              <span>Embeddings</span>
+              <span>AI Evaluation</span>
+              <span>MCP</span>
+              <span>AWS Bedrock</span>
+              <span>boto3</span>
+              <span>Microsoft Foundry</span>
+              <span>Tool Use</span>
+              <span>Agent Orchestration</span>
+              <span>Responsible AI</span>
             </div>
           </div>
         </section>
@@ -290,7 +330,7 @@ function App() {
               <div className="section-number">00</div>
               <div className="section-kicker">WHY ME</div>
               <h2>
-                I understand the business problem and I know how to get the
+                I understand the business problem—and I know how to get the
                 solution built.
               </h2>
             </div>
@@ -327,11 +367,86 @@ function App() {
           </div>
         </section>
 
-        {/* AI TRANSFORMATION */}
-        <section id="ai-transformation" className="section section-light transformation-section">
+        {/* AI ENGINEERING & TECHNOLOGY */}
+        <section id="ai-engineering" className="section engineering-section">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number light">01</div>
+              <div className="section-number">01</div>
+              <div>
+                <div className="section-kicker">AI ENGINEERING &amp; TECHNOLOGY</div>
+                <h2>Enough technical depth to build, evaluate, and lead AI systems.</h2>
+              </div>
+            </div>
+
+            <p className="section-intro">
+              I am not positioning myself as a model engineer. My value is the
+              ability to work credibly across business, product, engineering,
+              and AI—understanding the technology well enough to prototype,
+              challenge assumptions, evaluate solutions, and lead them into
+              production.
+            </p>
+
+            <div className="engineering-grid">
+              <article className="engineering-card engineering-card-accent">
+                <span>01</span>
+                <h3>Agents &amp; Skills</h3>
+                <p>
+                  Claude Skills and Agents, tool use, structured outputs,
+                  context engineering, human-agent handoffs, workflow
+                  orchestration, and governed agent patterns.
+                </p>
+                <div className="engineering-tags">
+                  <b>Claude</b><b>Claude Skills</b><b>Claude Agents</b><b>MCP</b><b>Tool Use</b>
+                </div>
+              </article>
+
+              <article className="engineering-card">
+                <span>02</span>
+                <h3>AI Application Development</h3>
+                <p>
+                  Python-based AI development alongside APIs, RAG pipelines,
+                  embeddings, retrieval, evaluation, Node.js, WebSockets, and
+                  production-oriented application patterns.
+                </p>
+                <div className="engineering-tags">
+                  <b>Python</b><b>RAG</b><b>Embeddings</b><b>APIs</b><b>Evaluation</b>
+                </div>
+              </article>
+
+              <article className="engineering-card">
+                <span>03</span>
+                <h3>Cloud AI Platforms</h3>
+                <p>
+                  Hands-on work with AWS Bedrock and boto3, plus Microsoft
+                  Foundry for agent deployment and enterprise AI platform
+                  exploration.
+                </p>
+                <div className="engineering-tags">
+                  <b>AWS Bedrock</b><b>boto3</b><b>Microsoft Foundry</b><b>Azure AI</b>
+                </div>
+              </article>
+
+              <article className="engineering-card">
+                <span>04</span>
+                <h3>Applied ML &amp; Evaluation</h3>
+                <p>
+                  Practical ML fundamentals applied to AI solution design,
+                  retrieval, embeddings, model behavior, experimentation,
+                  evaluation metrics, and evidence-based iteration.
+                </p>
+                <div className="engineering-tags">
+                  <b>Machine Learning</b><b>Model Evaluation</b><b>Precision</b><b>Recall</b><b>F1</b>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* AI TRANSFORMATION */}
+        <section id="ai-transformation" className="section section-dark">
+          <div className="container">
+            <div className="section-heading">
+              <div className="section-number light">02</div>
               <div>
                 <div className="section-kicker">AI TRANSFORMATION</div>
                 <h2>AI transformation is an operating model problem.</h2>
@@ -408,7 +523,7 @@ function App() {
           <div className="container">
             <div className="factory-header">
               <div>
-                <div className="section-number">02</div>
+                <div className="section-number">03</div>
                 <div className="section-kicker">INTELLECTUAL CENTERPIECE</div>
                 <h2>The AI Agent Factory</h2>
                 <p className="factory-subtitle">
@@ -515,7 +630,7 @@ function App() {
         <section id="ai-ppm" className="section section-light">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number">03</div>
+              <div className="section-number">04</div>
               <div>
                 <div className="section-kicker">FLAGSHIP APPLICATION</div>
                 <h2>AI-Enabled PPM</h2>
@@ -608,7 +723,7 @@ function App() {
         <section id="systems" className="section section-dark systems-section">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number light">04</div>
+              <div className="section-number light">05</div>
               <div>
                 <div className="section-kicker">WHAT I BUILD</div>
                 <h2>Strategy matters. Working systems matter more.</h2>
@@ -733,7 +848,7 @@ function App() {
         <section className="section execution-section">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number">05</div>
+              <div className="section-number">06</div>
               <div>
                 <div className="section-kicker">ENTERPRISE EXECUTION SYSTEM</div>
                 <h2>Intelligence embedded across execution.</h2>
@@ -802,10 +917,10 @@ function App() {
         </section>
 
         {/* EXPERIENCE */}
-        <section id="experience" className="section section-light experience-section">
+        <section id="experience" className="section section-dark">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number light">06</div>
+              <div className="section-number light">07</div>
               <div>
                 <div className="section-kicker">ENTERPRISE EXPERIENCE</div>
                 <h2>26+ years of learning how enterprises actually work.</h2>
@@ -856,7 +971,7 @@ function App() {
         <section id="insights" className="section section-light">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number">07</div>
+              <div className="section-number">08</div>
               <div>
                 <div className="section-kicker">INSIGHTS</div>
                 <h2>Ideas shaped by experience, not AI hype.</h2>
@@ -924,7 +1039,7 @@ function App() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/sandeep-bhatnagar-a4518517/"
+                href="https://www.linkedin.com/in/sandeep-bhatnagar"
                 target="_blank"
                 rel="noreferrer"
                 className="linkedin-link"
