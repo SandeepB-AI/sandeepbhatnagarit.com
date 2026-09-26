@@ -221,8 +221,8 @@ function App() {
               </p>
 
               <p className="hero-team-statement">
-                I help engineering teams build what matters—and help the
-                people doing the work grow.
+                I give engineering teams clarity on the problem, room to build,
+                and a clear path to production.
               </p>
 
               <div className="hero-actions">
@@ -254,35 +254,30 @@ function App() {
 
               <div className="hero-chain">
                 <div>
-                  <span>01</span>
                   <strong>Business Problem</strong>
                 </div>
 
                 <div className="chain-arrow">↓</div>
 
                 <div>
-                  <span>02</span>
                   <strong>AI Opportunity</strong>
                 </div>
 
                 <div className="chain-arrow">↓</div>
 
                 <div>
-                  <span>03</span>
                   <strong>AI Product</strong>
                 </div>
 
                 <div className="chain-arrow">↓</div>
 
                 <div>
-                  <span>04</span>
                   <strong>Production AI</strong>
                 </div>
 
                 <div className="chain-arrow">↓</div>
 
                 <div>
-                  <span>05</span>
                   <strong>Business Value</strong>
                 </div>
               </div>
@@ -313,6 +308,8 @@ function App() {
               <span>Embeddings</span>
               <span>AI Evaluation</span>
               <span>MCP</span>
+              <span>Vector Database</span>
+              <span>Java</span>
               <span>AWS Bedrock</span>
               <span>boto3</span>
               <span>Microsoft Foundry</span>
@@ -359,9 +356,9 @@ function App() {
               </p>
 
               <div className="credibility-line">
-                <strong>Enterprise transformation.</strong>
-                <strong>AI product leadership.</strong>
-                <strong>Hands-on building.</strong>
+                <span>Enterprise transformation.</span>
+                <span>AI product leadership.</span>
+                <span>Hands-on building.</span>
               </div>
             </div>
           </div>
@@ -409,7 +406,7 @@ function App() {
                   production-oriented application patterns.
                 </p>
                 <div className="engineering-tags">
-                  <b>Python</b><b>RAG</b><b>Embeddings</b><b>APIs</b><b>Evaluation</b>
+                  <b>Python</b><b>RAG</b><b>Vector Database</b><b>Embeddings</b><b>APIs</b><b>Evaluation</b>
                 </div>
               </article>
 
@@ -422,7 +419,7 @@ function App() {
                   exploration.
                 </p>
                 <div className="engineering-tags">
-                  <b>AWS Bedrock</b><b>boto3</b><b>Microsoft Foundry</b><b>Azure AI</b>
+                  <b>AWS Bedrock</b><b>boto3</b><b>Microsoft Foundry</b><b>Azure AI</b><b>Java</b>
                 </div>
               </article>
 

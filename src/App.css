@@ -2325,3 +2325,292 @@ a {
     overflow: hidden;
   }
 }
+
+
+/* =========================================================
+   UX POLISH / V2
+   ========================================================= */
+
+/* Hero journey: clean hierarchy, no unnecessary numbering */
+.hero-panel {
+  padding: 30px 32px 28px;
+  background: #ffffff;
+  border: 1px solid #d9dee7;
+  border-top: 4px solid var(--accent-blue);
+  box-shadow: 0 14px 34px rgba(23, 32, 51, 0.06);
+}
+
+.hero-panel-label {
+  margin-bottom: 28px;
+  color: #657184;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.hero-chain {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.hero-chain > div:not(.chain-arrow) {
+  display: block;
+}
+
+.hero-chain strong {
+  display: block;
+  color: #172033;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.hero-chain .chain-arrow {
+  display: block;
+  padding-left: 2px;
+  color: var(--accent-blue);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.hero-panel-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 28px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #e0e4ea;
+}
+
+.hero-panel-footer span {
+  color: #536174;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+/* Hero capability tags: give the row breathing room */
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.hero-tags span {
+  padding: 7px 11px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* The engineering leadership statement is deliberately original and understated. */
+.hero-team-statement {
+  max-width: 700px;
+  margin: 24px 0 0;
+  padding: 0 0 0 17px;
+  border-left: 2px solid var(--accent-teal);
+  color: #4b5665;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Credibility line: prevent words from visually running together. */
+.credibility-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #dfe3e8;
+}
+
+.credibility-line span {
+  color: #334155;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Dark sections need explicit heading contrast rather than relying on inheritance. */
+.section-dark .section-heading h2,
+.section-dark .section-heading .section-kicker {
+  color: #f7f7f5;
+}
+
+.section-dark .section-heading .section-kicker {
+  color: #8fb0ff;
+}
+
+.section-dark .section-intro {
+  color: #c2c8d2;
+}
+
+/* AI Transformation heading and supporting copy */
+#ai-transformation .section-heading h2 {
+  color: #f7f7f5 !important;
+}
+
+#ai-transformation .section-intro {
+  color: #c2c8d2 !important;
+}
+
+/* What I Build: the cards are intentionally light, so their typography must be dark. */
+.systems-section .system-card-new,
+.systems-section .system-card-new.featured-system {
+  color: #172033;
+}
+
+.systems-section .system-card-new h3 {
+  color: #172033 !important;
+}
+
+.systems-section .system-card-new > p {
+  color: #536174 !important;
+}
+
+.systems-section .system-card-new .system-label {
+  color: var(--accent-blue) !important;
+}
+
+.systems-section .system-card-new .tags span {
+  color: #465467 !important;
+  background: #ffffff !important;
+  border-color: #cbd4df !important;
+}
+
+.systems-section .system-card-new .system-outcome {
+  border-top-color: #d9e0e8;
+}
+
+.systems-section .system-card-new .system-outcome span {
+  color: #687589;
+}
+
+.systems-section .system-card-new .system-outcome strong {
+  color: #172033;
+}
+
+.systems-section .system-card-new .system-link {
+  color: #667386;
+}
+
+/* General card readability */
+.engineering-card h3,
+.transformation-card h3,
+.agent-role-card h3 {
+  color: #172033;
+}
+
+.engineering-card p {
+  color: #536174;
+}
+
+.engineering-tags {
+  gap: 7px;
+}
+
+.engineering-tags b {
+  color: #465467;
+  background: #ffffff;
+  border-color: #cbd4df;
+}
+
+/* Technology signal strip: avoid cramped pills and make all terms visible. */
+.ai-signal-strip {
+  padding: 20px 0;
+}
+
+.signal-items {
+  gap: 8px;
+}
+
+.signal-items span {
+  padding: 7px 10px;
+  line-height: 1.2;
+}
+
+/* Keep long technology labels from creating awkward single-word collisions. */
+.signal-items span,
+.hero-tags span,
+.engineering-tags b {
+  white-space: nowrap;
+}
+
+/* Responsive cleanup */
+@media (max-width: 850px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .hero-panel {
+    max-width: 760px;
+  }
+
+  .hero-panel-footer {
+    gap: 10px 22px;
+  }
+
+  .section-heading {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .section-heading .section-number {
+    display: none;
+  }
+
+  .section-intro,
+  .systems-intro {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 78px 0 70px;
+  }
+
+  .hero h1 {
+    font-size: 47px;
+  }
+
+  .hero-panel {
+    padding: 24px;
+  }
+
+  .hero-chain strong {
+    font-size: 17px;
+  }
+
+  .hero-team-statement {
+    font-size: 15px;
+  }
+
+  .hero-tags {
+    gap: 7px;
+  }
+
+  .hero-tags span {
+    padding: 7px 9px;
+  }
+
+  .credibility-line {
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .signal-items {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
