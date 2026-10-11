@@ -1,5 +1,10 @@
 import "./App.css";
 
+// Public-site privacy toggle. Keep false until Infor confirms the exact
+// internal scale figures (tenants, accounts, opportunities) may be shown
+// publicly. When false, the GTM cards show generalized scale wording.
+const SHOW_INTERNAL_SCALE = false;
+
 const factoryStages = [
   {
     number: "01",
@@ -49,7 +54,7 @@ const agentRoles = [
   ["01", "Portfolio Roadmap Agent", "Reads strategy, portfolio signals, milestones, and investment priorities as they shift."],
   ["02", "Demand Intake Agent", "Turns incoming requests into something decision-ready instead of another line in a backlog."],
   ["03", "Prioritization Agent", "Weighs value, feasibility, risk, dependencies, and capacity."],
-  ["04", "Resource Capacity Agent", "Surfaces capacity constraints, skill gaps, and competing demand before they become a crisis."],
+  ["04", "Resource Capacity Agent", "Surfaces capacity constraints, skill gaps, and competing demand before they become a crisis.", "IN DEVELOPMENT"],
   ["05", "Financial & Benefits Agent", "Connects what was invested, what was expected, and what actually happened."],
   ["06", "Synthetic PM Agent", "Handles planning, milestones, coordination, and status so people can focus on judgment calls."],
   ["07", "Risk & Issue Agent", "Picks up on patterns and dependencies before they turn into real issues."],
@@ -59,11 +64,12 @@ const agentRoles = [
 const systems = [
   {
     label: "ENTERPRISE AI",
-    title: "Enterprise AI Assistant",
+    title: "Enterprise AI & Agent Factory",
     description:
-      "AI-enabled enterprise assistance built around real business workflows, knowledge, and delivery needs.",
-    tags: ["AI Assistant", "Enterprise AI", "Agents"],
-    outcome: "3× throughput • 1,500+ hours reclaimed • 30% faster delivery",
+      "A team of 7 AI engineers and 2 AI architects delivering agents, skills, and AI products for go-to-market and internal operations, with 11 agents and skills in production.",
+    tags: ["Agent Factory", "Agentic AI", "Governance", "Adoption"],
+    outcome:
+      "Across Agent Factory deliverables over two-plus years: roughly 3× throughput • an estimated 1,500+ hours reclaimed annually • 30% faster delivery cycle time",
     status: "LED AT INFOR",
     featured: true,
   },
@@ -71,8 +77,8 @@ const systems = [
     label: "RAG / KNOWLEDGE AI",
     title: "Enterprise RAG / Knowledge System",
     description:
-      "A hands-on Claude-based RAG system using Voyage AI embeddings, vector search, BM25 hybrid retrieval, summary indexing, reranking, and measured evaluation.",
-    tags: ["Claude", "RAG", "Retrieval", "Evaluation"],
+      "A hands-on Claude-based RAG system using Voyage AI embeddings, vector search, BM25 hybrid retrieval, summary indexing, reranking, and a measured evaluation suite. Built from Anthropic cookbook patterns.",
+    tags: ["Claude", "RAG", "Hybrid Search", "LLM Evaluation"],
     status: "HANDS-ON BUILD",
   },
   {
@@ -84,10 +90,18 @@ const systems = [
     status: "DEPLOYED",
   },
   {
+    label: "MULTI-AGENT / GOVERNANCE",
+    title: "Multi-Agent Claims Workflow",
+    description:
+      "A LangGraph workflow where extractor and reviewer agents process insurance claims under a hard step and cost ceiling, a loop guard, and a fail-closed default that escalates to a human. A modeled scenario, not a client engagement.",
+    tags: ["LangGraph", "Multi-Agent", "Guardrails", "Fail-Closed"],
+    status: "HANDS-ON BUILD",
+  },
+  {
     label: "AGENT ENGINEERING",
     title: "Claude Skills & Agent Workflows",
     description:
-      "Hands-on agent and skill development using Claude capabilities, tool use, structured workflows, context engineering, and human-agent handoffs.",
+      "Hands-on agent and skill development using Claude capabilities, tool use, structured workflows, context engineering, and human-agent handoffs, including a Claude Skill that scores AI use-case requests for intake triage.",
     tags: ["Claude Skills", "Claude Agents", "Tool Use", "MCP"],
     status: "HANDS-ON CAPABILITY",
   },
@@ -101,31 +115,61 @@ const systems = [
   },
 ];
 
-const experience = [
+const gtmPortfolio = [
   {
-    years: "2025 — PRESENT",
-    company: "INFOR",
-    role: "Enterprise AI Factory / Product Ownership",
+    fn: "SALES",
+    title: "Customer Sales Intelligence",
     description:
-      "AI product strategy, vision, roadmap, backlog, Agentic AI, Copilot, Claude, enterprise AI delivery, governance, and adoption.",
-    outcome:
-      "Led the Enterprise AI Assistant program: 3× throughput, 1,500+ hours reclaimed a year, 30% faster delivery.",
+      "Opportunity close-likelihood, pipeline-activity intelligence, and account-propensity scoring embedded in Salesforce, so sellers and managers prioritize deals and accounts inside their normal workflow.",
+    tags: ["Snowflake", "Salesforce", "Predictive ML", "MLOps"],
+    scaleLabel: "SCALE",
+    scale:
+      "70%+ model accuracy on three years of history (2M+ opportunities) • 26K accounts prioritized",
+    scaleGeneral:
+      "70%+ model accuracy on three years of opportunity history • tens of thousands of accounts prioritized",
+    status: "DEPLOYED",
   },
   {
-    years: "2021 — 2025",
-    company: "INFOR",
-    role: "Agile Portfolio & Governance Transformation",
+    fn: "CUSTOMER SUCCESS",
+    title: "Adoption & Retention Intelligence",
     description:
-      "Enterprise intake, prioritization, investment evaluation, portfolio governance, Agile transformation, executive insights, and value realization.",
+      "Adoption insights and predictive models for churn risk, expansion likelihood, and lookalike risk patterns, surfaced to Customer Success through Snowflake and AI-enabled workflows.",
+    tags: ["Snowflake", "Predictive ML", "Churn & Expansion", "Customer Health"],
+    scaleLabel: "SCALE",
+    scale: "776 customer tenants (516 active) across four core ERP products",
+    scaleGeneral: "Hundreds of customer tenants across four core ERP products",
+    status: "DEPLOYED",
+  },
+  {
+    fn: "MARKETING",
+    title: "AI Nurture Campaigns",
+    description:
+      "An engagement engine that selects the audience, message, and timing from product usage, adoption, and behavior signals, replacing static segment campaigns across marketing, sales, and customer success.",
+    tags: ["AWS Bedrock", "Engagement Signals", "Personalization"],
+    scaleLabel: "ROLLOUT",
+    scale: "Piloted with marketing and sales leaders and refined through structured feedback",
+    scaleGeneral:
+      "Piloted with marketing and sales leaders and refined through structured feedback",
+    status: "DEPLOYED",
+  },
+];
+
+const experience = [
+  {
+    years: "SEP 2021 — PRESENT",
+    company: "INFOR",
+    role: "Sr Director, AI Transformation & Strategic Delivery",
+    description:
+      "Lead the Enterprise AI & Agent Factory: intake, prioritization, delivery, governance, and adoption of AI for go-to-market (Sales, Marketing, Customer Success) and internal operations. The framework grew out of the enterprise intake, prioritization, and portfolio governance model I built here, and I still prototype hands-on in Claude, Copilot, Snowflake, and Power Platform.",
     outcome:
-      "Built the intake and prioritization model the Agent Factory framework grew out of.",
+      "11 agents and skills in production. Across Agent Factory deliverables: roughly 3× throughput, an estimated 1,500+ hours reclaimed annually, and 30% faster delivery cycle time.",
   },
   {
     years: "2021",
     company: "DISNEY",
-    role: "Strategic Agile Advisor / PMO Transformation",
+    role: "Delivery Advisor Consultant",
     description:
-      "Global delivery modernization, process improvement, portfolio intake, prioritization, governance, and Agile transformation.",
+      "Global delivery modernization and PMO transformation: advised leadership on portfolio intake, prioritization, governance, dependency management, execution transparency, and Agile transformation across complex initiatives.",
     outcome: "Helped a large, matrixed organization modernize delivery on a tight timeline.",
   },
   {
@@ -133,16 +177,25 @@ const experience = [
     company: "ALVAREZ & MARSAL",
     role: "Governance & PMO Director",
     description:
-      "Built enterprise governance and delivery capabilities, integrated technology programs, executive reporting, risk management, and operationalization.",
-    outcome: "Stood up governance and reporting that CIOs actually used, not just filed away.",
+      "Built enterprise governance and delivery capabilities (PMO) from the ground up: portfolio governance, prioritization, integrated technology programs, KPI and executive reporting, risk management, and value realization across operations, finance, IT, and shared services.",
+    outcome:
+      "Stood up governance and reporting that CIOs actually used, not just filed away, partnering with executive steering committees on roadmaps and operating models.",
   },
   {
     years: "2007 — 2014",
     company: "TRAVELERS",
-    role: "Enterprise Technology / Program Delivery",
+    role: "Project Manager",
     description:
-      "Enterprise technology and data initiatives across Technology, Operations, Compliance, and Finance.",
+      "Enterprise technology and data initiatives across Technology, Operations, Compliance, and Finance, in a regulated environment.",
     outcome: "Cut my teeth on enterprise delivery across four very different functions.",
+  },
+  {
+    years: "2001 — 2007",
+    company: "CIGNA HEALTHCARE",
+    role: "Application Development Senior Specialist",
+    description:
+      "Delivered enterprise healthcare technology solutions for operational modernization and business process improvement, translating operational needs into technology requirements.",
+    outcome: "Early grounding in healthcare technology and regulated enterprise applications.",
   },
 ];
 
@@ -158,6 +211,7 @@ function App() {
           <nav className="nav">
             <a href="#build">What I Build</a>
             <a href="#agent-factory">Agent Factory</a>
+            <a href="#gtm-ai">GTM AI</a>
             <a href="#ai-ppm">AI-Enabled PPM</a>
             <a href="#experience">Experience</a>
             <a href="#contact" className="nav-cta">
@@ -208,7 +262,7 @@ function App() {
                 <span>AI Strategy</span>
                 <span>Agentic AI</span>
                 <span>AI Product Leadership</span>
-                <span>AI Engineering</span>
+                <span>AI Solution Delivery</span>
                 <span>RAG</span>
                 <span>AWS Bedrock</span>
                 <span>Microsoft Foundry</span>
@@ -219,26 +273,31 @@ function App() {
             <div className="hero-panel">
               <div className="hero-panel-label">PROVEN IN PRODUCTION</div>
               <div className="hero-panel-source">
-                Enterprise AI Assistant program, led at Infor
+                Across Agent Factory deliverables, 2+ years, at Infor
               </div>
 
               <div className="hero-proof-stats">
                 <div className="hero-proof-stat">
                   <strong>3×</strong>
-                  <span>delivery throughput</span>
+                  <span>delivery throughput (roughly)</span>
                 </div>
                 <div className="hero-proof-stat">
                   <strong>1,500+</strong>
-                  <span>hours reclaimed a year</span>
+                  <span>hours reclaimed a year (estimated)</span>
                 </div>
                 <div className="hero-proof-stat">
                   <strong>30%</strong>
-                  <span>faster delivery</span>
+                  <span>faster delivery cycle time</span>
                 </div>
               </div>
 
+              <p className="hero-panel-note">
+                Measured against pre-agent baselines. 11 agents and skills in
+                production, delivered by 7 AI engineers and 2 AI architects.
+              </p>
+
               <a href="#build" className="hero-panel-link">
-                Plus two AI systems I built myself, bugs included →
+                Plus hands-on AI builds, bugs included →
               </a>
             </div>
           </div>
@@ -247,22 +306,32 @@ function App() {
         {/* AI ENGINEERING SIGNAL */}
         <section className="ai-signal-strip">
           <div className="container">
-            <div className="signal-label">AI ENGINEERING &amp; TECHNOLOGY</div>
+            <div className="signal-label">AI TECHNOLOGY &amp; TOOLING</div>
             <div className="signal-items">
+              <span>LLM</span>
               <span>Generative AI</span>
               <span>Agentic AI</span>
+              <span>Multi-Agent Orchestration</span>
               <span>Claude</span>
               <span>Claude Skills</span>
-              <span>Claude Agents</span>
-              <span>Python</span>
+              <span>Prompt Engineering</span>
               <span>RAG</span>
               <span>Embeddings</span>
+              <span>Hybrid Search</span>
+              <span>Reranking</span>
+              <span>LLM Evaluation</span>
+              <span>Tool Use / Function Calling</span>
+              <span>Human-in-the-Loop</span>
+              <span>Guardrails</span>
+              <span>Fail-Closed Design</span>
+              <span>LangGraph</span>
               <span>MCP</span>
               <span>Vector Database</span>
               <span>AWS Bedrock</span>
               <span>boto3</span>
               <span>Microsoft Foundry</span>
-              <span>Tool Use</span>
+              <span>Snowflake</span>
+              <span>Python</span>
               <span>Responsible AI</span>
             </div>
           </div>
@@ -310,6 +379,14 @@ function App() {
                 survives contact with the enterprise.
               </p>
 
+              <p>
+                That includes 15+ years of portfolio and transformation
+                governance: building repeatable delivery frameworks, running
+                enterprise-wide change, and acting as a trusted partner to
+                CXOs and business leaders. I bring that to AI as a senior
+                technology leader, not a project manager.
+              </p>
+
               <div className="credibility-line">
                 <span>Enterprise transformation.</span>
                 <span>AI product leadership.</span>
@@ -333,8 +410,7 @@ function App() {
             <p className="section-intro dark-copy">
               AI transformation leaders need enough technical depth to
               understand how these systems actually work, not just describe
-              them in a slide deck. My hands-on work spans RAG pipelines,
-              voice agents, Claude-based tooling, and cloud AI platforms.
+              them in a slide deck. My hands-on work spans RAG pipelines and evaluation, voice agents, multi-agent workflows with guardrails, Claude-based tooling, and cloud AI platforms.
             </p>
 
             <div className="systems-grid-new">
@@ -379,14 +455,15 @@ function App() {
             <div className="build-proof">
               <div className="build-proof-header">
                 <span>HANDS-ON EVIDENCE</span>
-                <h3>Two deep builds, plus a growing library of everyday agents.</h3>
+                <h3>Three deep builds, plus a growing library of everyday agents.</h3>
                 <p>
-                  The first two are deliberately different: one is about
-                  retrieval and evaluation, the other is about an agent
-                  that can reason, hold context, call tools, and take a
-                  real action. Alongside them, I keep building smaller
-                  Claude Skills and Agents that remove everyday friction
-                  from delivery work.
+                  These are portfolio builds, not client deployments. They are
+                  deliberately different: one is about retrieval and
+                  evaluation, one is about an agent that can reason, hold
+                  context, call tools, and take a real action, and one is
+                  about keeping multiple agents inside hard limits. Alongside
+                  them, I keep building smaller Claude Skills and Agents that
+                  remove everyday friction from delivery work.
                 </p>
               </div>
 
@@ -408,7 +485,7 @@ function App() {
                     <span>Recall</span>
                     <span>F1</span>
                     <span>MRR</span>
-                    <span>Accuracy</span>
+                    <span>LLM-Graded Accuracy</span>
                   </div>
                 </article>
 
@@ -434,10 +511,33 @@ function App() {
 
                 <article className="build-case-card">
                   <div className="build-case-number">03</div>
+                  <div className="build-case-label">MULTI-AGENT / GOVERNANCE</div>
+                  <h4>Agents that stay inside the lines.</h4>
+                  <p>
+                    I built a LangGraph claims workflow where an extractor
+                    and a reviewer agent process each claim under a hard step
+                    and cost ceiling enforced in code, a loop guard that
+                    allows one retry, and a fail-closed default that
+                    escalates to a human instead of silently approving. State
+                    is checkpointed so any claim can be replayed. It runs on
+                    a modeled insurance scenario, and the human approval step
+                    is simulated today.
+                  </p>
+                  <div className="build-case-metrics">
+                    <span>LangGraph</span>
+                    <span>Step &amp; Cost Ceiling</span>
+                    <span>Loop Guard</span>
+                    <span>Fail-Closed</span>
+                    <span>Checkpoint Replay</span>
+                  </div>
+                </article>
+
+                <article className="build-case-card">
+                  <div className="build-case-number">04</div>
                   <div className="build-case-label">CLAUDE SKILLS / AGENTS</div>
                   <h4>A growing library of day-to-day agents.</h4>
                   <p>
-                    Beyond the two systems above, I've built a set of Claude
+                    Beyond the systems above, I've built a set of Claude
                     Skills and Agents that remove real day-to-day friction:
                     turning meeting notes into follow-up action items,
                     updating the project plan from those follow-ups,
@@ -446,7 +546,9 @@ function App() {
                     side, I've built a BA Agent that turns requirements into
                     Agile user stories and BDD scenarios and creates them
                     directly in Jira, a TDD Agent, and an end-to-end QA
-                    regression scripting agent.
+                    regression scripting agent. An AI intake-triage Skill
+                    scores new AI use-case requests across readiness, risk,
+                    and value and routes them to a backlog quadrant.
                   </p>
                   <div className="build-case-metrics">
                     <span>Meeting Follow-ups</span>
@@ -456,6 +558,7 @@ function App() {
                     <span>BA / User Stories</span>
                     <span>TDD Agent</span>
                     <span>E2E QA Scripting</span>
+                    <span>AI Intake Triage</span>
                   </div>
                 </article>
               </div>
@@ -470,8 +573,10 @@ function App() {
                   model deprecations, rate limits, environment configuration
                   headaches, a WebSocket URL I had to rebuild twice,
                   conversation state that quietly dropped context,
-                  credentials I had to lock down properly, and a timezone
-                  bug that only showed up after I deployed to the cloud.
+                  credentials I had to lock down properly, a timezone bug
+                  that only showed up after I deployed to the cloud, and a
+                  fail-open default in the claims workflow that I only caught
+                  by deliberately testing for it.
                 </p>
               </div>
             </div>
@@ -492,9 +597,9 @@ function App() {
                 </p>
 
                 <p className="factory-team-note">
-                  I lead a team of AI engineers who build inside this model,
-                  turning each stage into working AI systems for the
-                  business.
+                  I lead a team of 7 AI engineers and 2 AI architects who
+                  build inside this model, turning each stage into working
+                  AI systems for the business.
                 </p>
               </div>
 
@@ -522,6 +627,25 @@ function App() {
                   <p>{stage.description}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="factory-status">
+              <div>
+                <span>IN PRODUCTION</span>
+                <strong>11 agents and skills (1.x release)</strong>
+              </div>
+              <div>
+                <span>IN PRODUCTION</span>
+                <strong>AI service desk resolution agent (v1.2)</strong>
+              </div>
+              <div>
+                <span>IN PILOT</span>
+                <strong>AI sales opportunity coach</strong>
+              </div>
+              <div>
+                <span>TEAM</span>
+                <strong>7 AI engineers, 2 AI architects</strong>
+              </div>
             </div>
 
             <div className="factory-operating-model">
@@ -573,11 +697,57 @@ function App() {
           </div>
         </section>
 
+        {/* GTM AI PORTFOLIO */}
+        <section id="gtm-ai" className="section section-light">
+          <div className="container">
+            <div className="section-heading">
+              <div className="section-number">03</div>
+              <div>
+                <div className="section-kicker">GO-TO-MARKET AI</div>
+                <h2>Predict. Recommend. Act.</h2>
+              </div>
+            </div>
+
+            <p className="section-intro">
+              I led the cross-functional teams (AI/ML engineers, Snowflake
+              data engineers, and MLOps) that took these products from the
+              business problem to deployment, partnering with RevOps, sales,
+              marketing, and the CIO, then led the enablement and change
+              management that gets people using them.
+            </p>
+
+            <div className="gtm-grid">
+              {gtmPortfolio.map((item) => (
+                <article className="gtm-card" key={item.title}>
+                  <div className="gtm-label">{item.fn}</div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+
+                  <div className="tags">
+                    {item.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+
+                  <div className="gtm-scale">
+                    <span>{item.scaleLabel}</span>
+                    <strong>
+                      {SHOW_INTERNAL_SCALE ? item.scale : item.scaleGeneral}
+                    </strong>
+                  </div>
+
+                  <div className="gtm-status">{item.status}</div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* AI ENABLED PPM */}
         <section id="ai-ppm" className="section section-light">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number">03</div>
+              <div className="section-number">04</div>
               <div>
                 <div className="section-kicker">FLAGSHIP APPLICATION</div>
                 <h2>AI-Enabled PPM</h2>
@@ -593,11 +763,12 @@ function App() {
             </p>
 
             <div className="agent-grid">
-              {agentRoles.map(([number, title, description]) => (
+              {agentRoles.map(([number, title, description, status]) => (
                 <div className="agent-role-card" key={number}>
                   <span>{number}</span>
                   <h3>{title}</h3>
                   <p>{description}</p>
+                  {status && <em className="agent-status">{status}</em>}
                 </div>
               ))}
             </div>
@@ -608,17 +779,17 @@ function App() {
         <section id="experience" className="section section-dark">
           <div className="container">
             <div className="section-heading">
-              <div className="section-number light">04</div>
+              <div className="section-number light">05</div>
               <div>
                 <div className="section-kicker">ENTERPRISE EXPERIENCE</div>
-                <h2>26+ years of learning how enterprises actually work.</h2>
+                <h2>20+ years of learning how enterprises actually work.</h2>
               </div>
             </div>
 
             <p className="section-intro dark-copy">
               My AI work is grounded in years of enterprise transformation,
               technology delivery, PMO and PPM leadership, TMO, governance,
-              and executive leadership.
+              and trusted partnership with CXOs and business leaders.
             </p>
 
             <div className="experience-timeline">
@@ -662,7 +833,7 @@ function App() {
         <section id="contact" className="section contact-section">
           <div className="container contact-inner">
             <div>
-              <div className="section-number">05</div>
+              <div className="section-number">06</div>
               <div className="section-kicker">LET'S CONNECT</div>
 
               <h2>
@@ -715,4 +886,6 @@ function App() {
 }
 
 export default App;
+
+
 
