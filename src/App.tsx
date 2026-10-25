@@ -66,7 +66,7 @@ const systems = [
     label: "ENTERPRISE AI",
     title: "Enterprise AI & Agent Factory",
     description:
-      "A team of 7 AI engineers and 2 AI architects delivering agents, skills, and AI products for go-to-market and internal operations, with 11 agents and skills in production.",
+      "A team of AI engineers and AI architects delivering agents, skills, and AI products for go-to-market and internal operations, with 11 agents and skills in production.",
     tags: ["Agent Factory", "Agentic AI", "Governance", "Adoption"],
     outcome:
       "Across Agent Factory deliverables over two-plus years: roughly 3× throughput • an estimated 1,500+ hours reclaimed annually • 30% faster delivery cycle time",
@@ -293,7 +293,7 @@ function App() {
 
               <p className="hero-panel-note">
                 Measured against pre-agent baselines. 11 agents and skills in
-                production, delivered by 7 AI engineers and 2 AI architects.
+                production, delivered by AI engineers and AI architects.
               </p>
 
               <a href="#build" className="hero-panel-link">
@@ -597,7 +597,7 @@ function App() {
                 </p>
 
                 <p className="factory-team-note">
-                  I lead a team of 7 AI engineers and 2 AI architects who
+                  I lead a team of  AI engineers and  AI architects who
                   build inside this model, turning each stage into working
                   AI systems for the business.
                 </p>
