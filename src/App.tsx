@@ -158,7 +158,7 @@ const experience = [
   {
     years: "SEP 2021 — PRESENT",
     company: "INFOR",
-    role: "Sr Director, AI Transformation & Strategic Delivery",
+    role: "Director, AI Transformation & Strategic Delivery",
     description:
       "Lead the Enterprise AI & Agent Factory: intake, prioritization, delivery, governance, and adoption of AI for go-to-market (Sales, Marketing, Customer Success) and internal operations. The framework grew out of the enterprise intake, prioritization, and portfolio governance model I built here, and I still prototype hands-on in Claude, Copilot, Snowflake, and Power Platform.",
     outcome:
