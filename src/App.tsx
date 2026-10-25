@@ -644,7 +644,7 @@ function App() {
               </div>
               <div>
                 <span>TEAM</span>
-                <strong>7 AI engineers, 2 AI architects</strong>
+                <strong>AI engineers, AI architects</strong>
               </div>
             </div>
 
